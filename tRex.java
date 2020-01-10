@@ -69,7 +69,7 @@ public class tRex extends Actor
             lastTreeCount = count;
          }
         
-        if (count - lastTreeCount > 150) {
+        if (count - lastTreeCount > 50) {
             canAddTree = true;
         }
     }    
@@ -82,7 +82,7 @@ public class tRex extends Actor
             lastPterodactylCount = count;
         }
         
-        if (count - lastPterodactylCount > 50) {
+        if (count - lastPterodactylCount > 100) {
             canAddPterodactyl = true;
         }
     }
