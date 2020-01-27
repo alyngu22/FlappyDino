@@ -29,7 +29,6 @@ public class flappyBird extends Actor
             //Greenfoot.playSound("eating.wav");
         }
         setLocation(getX(), getY()+gravity);
-        turn(1);
         if(flapped&&!Greenfoot.isKeyDown("space")){
             gravity = -gravity;
             flapped = false;
@@ -42,7 +41,6 @@ public class flappyBird extends Actor
         while(jumpDelay>=0&&(getY()>height-20)){
             jumpDelay--;
             setLocation(getX(), getY()-gravity);
-            turn(-1);
         }
         flapped = false;
         

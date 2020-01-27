@@ -22,6 +22,7 @@ public class tRex extends Actor
     int lastTreeCount = 0;
     boolean canAddPterodactyl = true;
     int lastPterodactylCount = 0; 
+    boolean bullet = true;
     
     GreenfootImage right = new GreenfootImage("Dino-right-up.png");
     GreenfootImage left = new GreenfootImage("dino-left-up.png");
@@ -38,6 +39,7 @@ public class tRex extends Actor
         obstacleSpeed = 7 + (score/100);
         addTree();
         addPterodactyl();
+        addBullet();
         gameOver();
         
     } 
@@ -50,7 +52,7 @@ public class tRex extends Actor
             
         }
         
-        if (count == 5000) {
+        if (score == 1000) {
             getWorld().showText("CONGRATULATIONS! You reached the highest level! ",400, 375);
             Greenfoot.delay(100);
             getWorld().addObject(new Asteroid(3), 800,0);
@@ -69,7 +71,7 @@ public class tRex extends Actor
             lastTreeCount = count;
          }
         
-        if (count - lastTreeCount > 50) {
+        if (count - lastTreeCount > 30) {
             canAddTree = true;
         }
     }    
@@ -84,6 +86,13 @@ public class tRex extends Actor
         
         if (count - lastPterodactylCount > 100) {
             canAddPterodactyl = true;
+        }
+    }
+    
+    public void addBullet() {
+        if (Greenfoot.isKeyDown("space") && bullet) {
+            getWorld().addObject(new bullet(),0,250);
+            bullet = false;
         }
     }
     public void jump() {
@@ -102,8 +111,8 @@ public class tRex extends Actor
         }
         else
         {
-            if ( "up".equals(Greenfoot.getKey())) {
-                ySpeed = -17;
+            if ( Greenfoot.isKeyDown("up")) {
+                ySpeed = -15;
                 setLocation(getX(), getY()+ySpeed); 
             }
         }

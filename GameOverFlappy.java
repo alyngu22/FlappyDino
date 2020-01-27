@@ -20,6 +20,7 @@ public class GameOverFlappy extends World
         addObject(new loss(), 300, 100);
         addObject(new scoreboard(), 290, 200);
         addObject(new reset(), 300, 280);
+        addObject(new HomeButton(), 550, 250);
         if(MyWorld.getScore()<10&&MyWorld.getScore()>0){
             showText("0" + MyWorld.getScore(), 366, 186);
         }

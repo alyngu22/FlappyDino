@@ -19,11 +19,13 @@ public class DinoWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 400, 1); 
-        setPaintOrder(Border.class,Asteroid.class,tRex.class,Tree.class, Pterodactyl.class);
+        setPaintOrder(Border.class,bullet.class,Asteroid.class,tRex.class,Tree.class, Pterodactyl.class);
         count = 0;
         score = 0;
         prepare();
-       
+        
+        showText("Press the space bar to launch a rocket that \n will obliterate all your enemies. You only get one shot!", 400,375);
+        Greenfoot.setSpeed(50);
     }
     
     public void act() {

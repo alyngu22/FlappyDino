@@ -1,20 +1,21 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/* Write a description of class MyWorld here.
- * 
- * @author (your name) 
+ //Write a description of class MyWorld here.
+ /*
+ * @author (your name)
  * @version (a version number or a date)
  */
 public class MyWorld extends World
 {
 
-    /* Constructor for objects of class MyWorld.
-     */
+    // Constructor for objects of class MyWorld.//
     public static int bestScore = 0;
     public static int score = 0;
     private Tube tube = new Tube(false);
     private Tube tube2 = new Tube(true);
     private int time = 0;
+    private int tubeAppears = (int)(Math.random()*180)+250;
+
     public MyWorld()
     {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -22,15 +23,16 @@ public class MyWorld extends World
         score = 0;
         addObject(new flappyBird(), 51, 200);
     }
-    public void act() 
+    public void act()
     {
         addObject(tube, 590, (int)(Math.random()+250)+520);
         addObject(tube2, tube.getX(), tube.getY()-1000);
-        if(tube.getX()<=300){
+        if(tube.getX()<=tubeAppears){
             tube = new Tube();
             addObject(tube, 590, Greenfoot.getRandomNumber(40) + 250);
             tube2 = new Tube(true);
             addObject(tube2, tube.getX(), (int)(Math.random()*100)+(tube.getY()-315));
+            tubeAppears = (int)(Math.random()*180)+250;
         }
         showScore();
         if(score>bestScore){

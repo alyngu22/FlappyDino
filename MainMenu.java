@@ -27,9 +27,7 @@ public class MainMenu extends World
     private void prepare()
     {
         DinoIcon dinoIcon = new DinoIcon();
-        addObject(dinoIcon,182,203);
-        
-        flappyBird f = new flappyBird();
-        addObject(f,500,203);
+        addObject(dinoIcon,200,200);
+        addObject(new BirdIcon(),600,200);
     }
 }

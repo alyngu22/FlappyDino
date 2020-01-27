@@ -1,23 +1,22 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class DinoIcon here.
+ * Write a description of class HomeButton here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class DinoIcon extends Actor
+public class HomeButton extends Actor
 {
     /**
-     * Act - do whatever the DinoIcon wants to do. This method is called whenever
+     * Act - do whatever the HomeButton wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-  
-    public void act()
+    public void act() 
     {
         if (Greenfoot.mouseClicked(this)) {
-            Greenfoot.setWorld(new DinoWorld());
+            Greenfoot.setWorld(new MainMenu());
         }
     }    
 }

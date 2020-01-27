@@ -19,7 +19,6 @@ public class reset extends Actor
     public void act() 
     {
         if(Greenfoot.mouseClicked(this)){
-            Greenfoot.stop();
             MyWorld m = new MyWorld();
             Greenfoot.setWorld(m);
         }

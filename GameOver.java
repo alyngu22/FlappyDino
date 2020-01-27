@@ -27,10 +27,9 @@ public class GameOver extends World
     private void prepare()
     {
 
-        GameOverIcon gameOverIcon = new GameOverIcon();
-        addObject(gameOverIcon,400,126);
-
         ResetButton resetButton = new ResetButton();
-        addObject(resetButton,396,226);
+        addObject(resetButton,610,320);
+        HomeButton homeButton2 = new HomeButton();
+        addObject(homeButton2,252,328);
     }
 }
